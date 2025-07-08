@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "checkJs": false, // Set to false to disable type-checking in .js files
+    "jsx": "react",  // Only if you use JSX in JS files (not common in backend)
+                     // You can remove this line if your backend doesn't use JSX.
+    "target": "es2020",
+    "module": "commonjs",
+    "lib": ["es2020", "dom"], // `dom` might not be strictly needed for backend, but harmless.
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "*": ["node_modules/*"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*"
+  ]
+}
