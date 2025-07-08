@@ -1,0 +1,53 @@
+/* frontend/src/styles/Column.css */
+.column {
+    flex: 1; /* Allows columns to grow and shrink */
+    min-width: 280px; /* Minimum width for columns */
+    max-width: 350px; /* Maximum width for columns */
+    background-color: #e2e4e6; /* Lighter grey for column background */
+    padding: 20px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.column h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ccd0d3;
+    text-align: center;
+}
+
+.task-list {
+    flex-grow: 1;
+    min-height: 100px; /* Ensures droppable area is visible even if empty */
+    background-color: #f0f2f5; /* Background for task list area */
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between task cards */
+}
+
+.task-list.dragging-over {
+    background-color: #d1d3d6; /* Slightly darker when dragging over */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .column {
+        min-width: 250px;
+        padding: 15px;
+    }
+    .column h3 {
+        font-size: 1.2rem;
+    }
+    .task-list {
+        padding: 10px;
+    }
+}

@@ -1,0 +1,84 @@
+/* frontend/src/styles/ActivityLogPanel.css */
+.activity-log-panel {
+    min-width: 280px;
+    max-width: 350px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: fit-content; /* Adjust height based on content */
+    align-self: flex-start; /* Align to top of flex container */
+    position: sticky; /* Keeps it visible when scrolling board horizontally */
+    top: 20px; /* Adjust as needed */
+}
+
+.activity-log-panel h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ccd0d3;
+    text-align: center;
+}
+
+.activity-list {
+    max-height: 500px; /* Limit height and add scroll if many activities */
+    overflow-y: auto;
+    padding-right: 5px; /* Space for scrollbar */
+}
+
+.activity-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.activity-item {
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #555;
+    word-wrap: break-word; /* Ensure long text wraps */
+}
+
+.activity-item:last-child {
+    margin-bottom: 0;
+}
+
+.activity-log-panel.error {
+    background-color: #ffe3e6;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .activity-log-panel {
+        min-width: 250px;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .activity-log-panel {
+        width: 100%; /* Take full width below certain breakpoint */
+        max-width: none;
+        position: static; /* Remove sticky behavior */
+        margin-top: 20px;
+        padding: 15px;
+    }
+    .activity-log-panel h3 {
+        font-size: 1.2rem;
+    }
+    .activity-list {
+        max-height: 300px; /* Adjust max height for mobile */
+    }
+}

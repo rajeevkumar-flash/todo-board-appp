@@ -1,0 +1,132 @@
+/* frontend/src/styles/TaskCard.css */
+.task-card {
+    background-color: #ffffff;
+    padding: 18px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px; /* Space between cards in the list */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: grab;
+    border: 1px solid #eee;
+    position: relative; /* For animations or overlay */
+}
+
+.task-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.task-card.dragging {
+    transform: rotate(3deg); /* Slight rotation when dragging */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #fdfdff;
+}
+
+.task-card h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.task-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.task-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #eee;
+}
+
+.task-actions {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    gap: 8px; /* Space between action buttons */
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.task-actions button {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    box-shadow: none; /* Remove individual button shadow */
+}
+
+.task-actions button:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add hover shadow */
+}
+
+/* Task Edit Form within card */
+.task-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-edit-form input,
+.task-edit-form textarea,
+.task-edit-form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.task-edit-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.task-edit-actions button {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+}
+
+/* Specific button colors for TaskCard */
+.btn-edit {
+    background-color: #17a2b8; /* Info blue */
+    color: white;
+}
+.btn-edit:hover {
+    background-color: #138496;
+}
+
+.btn-smart-assign {
+    background-color: #6f42c1; /* Purple */
+    color: white;
+}
+.btn-smart-assign:hover {
+    background-color: #5a359d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .task-card {
+        padding: 15px;
+    }
+    .task-card h4 {
+        font-size: 1rem;
+    }
+    .task-card p {
+        font-size: 0.85rem;
+    }
+    .task-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .task-actions button {
+        width: 100%;
+    }
+}

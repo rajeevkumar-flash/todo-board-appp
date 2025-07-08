@@ -1,0 +1,14 @@
+/* frontend/src/styles/App.css */
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .App {
+        padding: 10px;
+    }
+}
