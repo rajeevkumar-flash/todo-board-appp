@@ -57,6 +57,7 @@ const createTask = async (req, res) => {
             lastModifiedAt: new Date(),
             version: 1
         });
+        await task.populate('assignedUser', 'username email');
 
         await logAction(req.user._id, req.user.username, 'TASK_CREATED', task._id, task.title, {
             assignedTo: task.assignedUser
