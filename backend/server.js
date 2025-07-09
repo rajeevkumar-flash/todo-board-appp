@@ -46,7 +46,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Middleware
 app.use(cors({
-    'https://todo-board-appp.vercel.app'
+    
     origin: process.env.FRONTEND_URL, // Allow requests from your frontend
     credentials: true
 }));
